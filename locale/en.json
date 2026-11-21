@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Local memory",
+    "description": "Cross-session memory and a folder knowledge base in a single local SQLite file. Three memory layers (profile, scenes, facts) are injected before each turn; folders are indexed with their structure preserved, and retrieval chunks can be edited, diffed, and rolled back.",
+    "detail": "docs/DETAIL.md"
+  }
+}

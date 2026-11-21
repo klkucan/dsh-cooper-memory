@@ -1,0 +1,22 @@
+- insert:
+    # 原生 Host 插件：每个步骤前自动召回并注入记忆
+    - id: dsh-cooper-memory
+      name: dsh-cooper-memory
+      config:
+        enabled: true
+        budgetChars: 1000
+        maxItems: 6
+        maxScenes: 1
+        dedupe: true
+    # MCP 客户端：提供 20 个工具给模型主动调用
+    - id: dsh-cooper-memory-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: dsh-cooper-memory
+        transport: stdio
+        command: node
+        args:
+          - 'node_modules/dsh-cooper-memory/mcp.mjs'
+        env:
+          NODE_NO_WARNINGS: '1'
+        failOnStartupError: true

@@ -1,0 +1,104 @@
+{
+  "name": "dsh-cooper-memory",
+  "version": "0.6.1",
+  "description": "Cross-session memory and a folder knowledge base for DeepSeek Harness — local SQLite, no Docker, no vector service.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klkucan/dsh-cooper-memory.git"
+  },
+  "homepage": "https://github.com/klkucan/dsh-cooper-memory#readme",
+  "bugs": {
+    "url": "https://github.com/klkucan/dsh-cooper-memory/issues"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "@node-rs/jieba": "^2.0.4"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "memory",
+    "knowledge-base",
+    "sqlite",
+    "mcp",
+    "rag",
+    "cross-session",
+    "reranker",
+    "embeddings",
+    "offline",
+    "chinese"
+  ],
+  "bin": {
+    "dsh-cooper-memory": "cli.mjs",
+    "dsh-cooper-memory-web": "web.mjs",
+    "dsh-cooper-memory-mcp": "mcp.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./mcp": "./mcp.mjs",
+    "./cli": "./cli.mjs",
+    "./web": "./web.mjs",
+    "./lib/*": "./lib/*",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-llm": ">=0.1.0-rc.2 <0.3.0-0",
+    "dsh-better-sidebar": ">=0.26.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-llm": {
+      "optional": true
+    },
+    "dsh-better-sidebar": {
+      "optional": true
+    }
+  },
+  "optionalDependencies": {
+    "@xenova/transformers": "^2.17.2"
+  },
+  "overrides": {
+    "sharp": "^0.34.5"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "mcp.mjs",
+    "cli.mjs",
+    "web.mjs",
+    "lib",
+    "models",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs/DETAIL.md",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
