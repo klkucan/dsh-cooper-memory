@@ -6,6 +6,9 @@ Cross-session long-term memory **and** a local folder knowledge base for
 Everything lives in a single local SQLite file — no Docker, no vector database service.
 Apart from calls to the model gateway **you** configure, the process makes no outbound requests.
 
+- **GitHub repository**: <https://github.com/klkucan/dsh-cooper-memory>
+- **npm package**: `dsh-cooper-memory` — <https://www.npmjs.com/package/dsh-cooper-memory>
+
 ```bash
 npm i -D dsh-cooper-memory
 ```

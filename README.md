@@ -5,6 +5,9 @@
 数据全在本地一个 SQLite 文件里，不依赖 Docker、不需要向量数据库服务；
 除了调用你自己配置的模型网关，进程不发起任何外部请求。
 
+- **GitHub 仓库**：<https://github.com/klkucan/dsh-cooper-memory>
+- **npm 包名**：`dsh-cooper-memory` — <https://www.npmjs.com/package/dsh-cooper-memory>
+
 ```bash
 npm i -D dsh-cooper-memory
 ```
